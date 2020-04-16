@@ -10,7 +10,7 @@
 #include <cstrike>
 #include <sdkhooks>
 
-#include "types.sp"
+#include "retakes_v2/types.sp"
 
 /** Cross file globals **/
 Client g_Client[MAXPLAYERS + 1];
@@ -18,14 +18,14 @@ Queue g_ClientQueue;
 Spawn g_Spawns[MAX_SPAWN_COUNT];
 SpawnModels g_SpawnModels;
 
-#include "round.sp"
-#include "hooks.sp"
-#include "votes.sp"
-#include "menus.sp"
-#include "cookies.sp"
-#include "commands.sp"
-#include "plugin_info.sp"
-#include "spawn_points.sp"
+#include "retakes_v2/round.sp"
+#include "retakes_v2/hooks.sp"
+#include "retakes_v2/votes.sp"
+#include "retakes_v2/menus.sp"
+#include "retakes_v2/cookies.sp"
+#include "retakes_v2/commands.sp"
+#include "retakes_v2/plugin_info.sp"
+#include "retakes_v2/spawn_points.sp"
 
 
 
