@@ -1,7 +1,7 @@
 #if !defined COMMANDS_SP
 #define COMMANDS_SP
 
-#include "types.sp"
+#include "retakes_overhauled/types.sp"
 
 void InitAdminCMDs() {
     RegAdminCmd("sm_edit", c_EnableEdit, ADMFLAG_ROOT);

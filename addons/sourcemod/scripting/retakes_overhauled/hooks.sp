@@ -2,8 +2,8 @@
 #define HOOKS_SP
 
 #include "retake.sp"
-#include "round.sp"
-#include "types.sp"
+#include "retakes_overhauled/round.sp"
+#include "retakes_overhauled/types.sp"
 
 
 

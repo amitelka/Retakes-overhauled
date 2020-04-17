@@ -1,9 +1,9 @@
 #if !defined ROUND_SP
 #define ROUND_SP
 
-#include "types.sp"
-#include "client.sp"
-#include "spawn_points.sp"
+#include "retakes_overhauled/types.sp"
+#include "retakes_overhauled/client.sp"
+#include "retakes_overhauled/spawn_points.sp"
 
 
 int g_iBomber = -1;
