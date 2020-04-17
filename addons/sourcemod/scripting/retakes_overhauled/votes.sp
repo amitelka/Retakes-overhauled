@@ -34,10 +34,13 @@ char[] GetVoteType(RoundTypes type) {
 
     switch (type) {
         case PISTOL_ROUND: {
-            msg = "pistols only";
+            msg = "Pistols Only";
         }
         case DEAGLE_ROUND: {
-            msg = "deagles only";
+            msg = "Deagles Only";
+        }
+        case AWP_ROUND: {
+            msg = "AWP Only";
         }
     }
 
@@ -73,6 +76,10 @@ Action c_VotePistol(int client, int argc) {
 
 Action c_VoteDeagle(int client, int argc) {
     VoteHandler(client, DEAGLE_ROUND);
+}
+
+Action c_VoteAWP(int client, int argc) {
+    VoteHandler(client, AWP_ROUND);
 }
 
 void ResetAllClientsVote(RoundTypes type) {
