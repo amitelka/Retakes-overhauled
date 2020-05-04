@@ -139,7 +139,7 @@ void SetupWaitingRound() {
 
 void SetupRoundEnd() {
     if (!g_bBombWasPlanted && (g_rtRoundState & ~RETAKE_NOT_LIVE)) {
-        if (-1 != g_iBomber) {
+        if (-1 != g_iBomber && IsClientValid(g_iBomber)) {
             PrintToChatAll("%s %N hasn't planted the bomb and will be swapped to CT", RETAKE_PREFIX, g_iBomber);
         }
     }
@@ -409,9 +409,9 @@ void SetupSpawns(Bombsite site) {
         int spawn_index = GetRandomSpawn(view_as<SpawnType>(GetClientTeam(GetArrayCell(players_matrix, i))), site);
         if (-1 == spawn_index) {
             RetakeStop();
-            SetFailState("%s Did not find spawn point for %N, Team %d, Site %d @ SetupSpawns",      \
-             RETAKE_PREFIX, GetArrayCell(players_matrix, i),                                        \
-             GetClientTeam(GetArrayCell(players_matrix, i)), site);
+            SetFailState("%s Did not find spawn point for %N, Team %d, Site %d @ SetupSpawns @ map %s", \
+             RETAKE_PREFIX, GetArrayCell(players_matrix, i),                                            \
+             GetClientTeam(GetArrayCell(players_matrix, i)), site, g_sCurrentMap);
             break;
         }
 
@@ -422,7 +422,9 @@ void SetupSpawns(Bombsite site) {
 }
 
 Action SwitchToBomb(Handle timer, int client) {
-    FakeClientCommand(client, "use weapon_c4");
+    if (IsClientInGamePlaying(client)) {
+        FakeClientCommand(client, "use weapon_c4");
+    }
     return Plugin_Stop;
 }
 
