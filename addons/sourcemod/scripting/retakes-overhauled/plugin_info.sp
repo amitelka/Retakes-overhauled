@@ -5,7 +5,7 @@
 public Plugin myinfo = 
 {
 	name = "CSGO Retake",
-	author = "ae",
+	author = "wat u doin ;-;",
 	description = "Retake plugin for csgo",
 	version = PLUGIN_VERSION,
 	url = "https://github.com/amitelka/Retakes-overhauled"
